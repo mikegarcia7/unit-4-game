@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="bg">
+       
+<!-- Main Container of Page -->
+<div class="container">
+
+        <!-- Main Title of Game -->
+        
+        <div class="row">
+
+            <div class="col-lg-3">
+                &nbsp;
+            </div>
+        <div class="col-lg-6 bg-danger" style="color: white; border: 0; padding-top: 20px; padding-bottom: 20px">
+            <h1 class="text-center"><strong>Mario Kart Collector!</strong></h1>
+        </div>
+        <div class="col-lg-3">
+                &nbsp;
+            </div>
+        </div>
+
+        <!-- Instructions Section -->
+        <div class="row">
+
+                <div class="col-lg-3">
+                        &nbsp;
+                </div>
+            <div class="col-lg-6">
+                <div class="panel panel-primary"></div>
+                    <div class="panel heading">
+                            <h3 class="panel-title text-center"style="margin-bottom: 0">Instructions</h3>
+                    </div>
+                       <br style="padding: 2px">
+                    <div class="panel-body">
+                        <p class="text-center" style="margin-bottom: 0; font-size: 16.5px;"><strong>You will be given a random number at the start of the game.</strong></p>
+                        <p class="text-center" style="margin-bottom: 0; font-size: 16.5px;"><strong>There are four Mario Kart characters below. By clicking on a character, you will add a specific amount of points to your total score.</strong></p>
+                        <p class="text-center" style="margin-bottom: 0; font-size: 16.5px;"><strong>You win the game by matching your total score to the random number or you lose the game if your total score goes above the random number.</strong></p>
+                        <p class="text-center" style="margin-bottom: 0; font-size: 16.5px;"><strong>The value of each instrument is hidden from you until you click on it.</strong></p>
+                        <p class="text-center" style="font-size: 16.5px;"><strong>Each time when the game starts, the game will change the values of each Mario Kart character.</strong></p>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                        &nbsp;
+                </div>
+            </div>
+        </div>
+
+        <!-- New Row for Kart, Guess, and Random Number Options -->
+        <div class="row" style="padding: 10px">
+
+
+            <!-- Kart Options Section -->
+            <div class="col-lg-6">
+
+                <div class="panel panel-primary">
+                    <div class="panel heading bg-danger text-white">
+                            <h3 class="panel-title text-center">Crystal Options</h3>
+                    </div>  
+                    <div class="panel-body text-center">
+                            <img src="assets/images/mario.png" id="mario" style="height: 100px; width: 100px;" onclick="clickAudio()">
+                            <audio id="coinSound" src="assets/audio/coin.wav"></audio>
+                            <img src="assets/images/peach.png" id="peach" style="height: 100px; width: 100px;" onclick="clickAudio()">
+                            <audio id="coinSound" src="assets/audio/coin.wav"></audio>
+                            <img src="assets/images/yoshi.png" id="yoshi" style="height: 100px; width: 100px;" onclick="clickAudio()">
+                            <audio id="coinSound" src="assets/audio/coin.wav"></audio>
+                            <img src="assets/images/bowser.png" id="bowser" style="height: 100px; width: 100px;" onclick="clickAudio()">
+                            <audio id="coinSound" src="assets/audio/coin.wav"></audio>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Guess Section -->
+            <div class="col-lg-3">
+
+                <div class="panel panel-primary">
+                    <div class="panel heading bg-danger text-white">
+                            <h3 class="panel-title text-center">Your Guess</h3>
+                    </div>
+                    <div class="panel-body">
+                            <h3 class="panel-title text-center"id="userGuess"></h3>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Match This Number Section -->
+            <div class="col-lg-3">
+
+                <div class="panel panel-primary">
+                    <div class="panel heading bg-danger text-white">
+                            <h3 class="panel-title text-center">Match This Number!</h3>
+                    </div>
+                    <div class="panel-body">
+                            <h3 class="panel-title text-center"id="displayNum"></h3>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    <!-- New Row for Wins/Losses Counters -->
+    <div class="row" style="padding: 10px">
+
+         <!-- Win Counter Section -->
+         <div class="col-lg-3">
+
+                <div class="panel panel-primary">
+                    <div class="panel heading bg-danger text-white">
+                            <h3 class="panel-title text-center">Wins</h3>
+                            <audio id="winSound" src="assets/audio/win.wav"></audio>
+                    </div>
+                    <div class="panel-body">
+                            <h3 class="panel-title text-center" id="winCount"></h3>
+                    </div>
+                </div>
+            </div>
+
+          <!-- Loss Counter Section -->
+          <div class="col-lg-3">
+
+                <div class="panel panel-primary">
+                    <div class="panel heading bg-danger text-white">
+                            <h3 class="panel-title text-center">Losses</h3>
+                            <audio id="lossSound" src="assets/audio/loss.wav"></audio>
+                    </div>
+                    <div class="panel-body">
+                            <h3 class="panel-title text-center" id="lossCount"></h3>
+                    </div>
+                </div>
+            </div>
+    </div>
+   
+   
+</div>
+</div>
+<!-- JQuery Code -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Link to My JavaScript File -->
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+</body>
+</html>
